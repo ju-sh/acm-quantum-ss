@@ -3,7 +3,7 @@
 \input{../config.tex}
 
 \title{Problem solving session 5}
-\author{\tiny{JS}}
+\author{\href{https://github.com/ju-sh/acm-quantum-ss}{{\small ju-sh/acm-quantum-ss}}}
 \date{19 June 2025}
 
 \begin{document}
@@ -207,9 +207,9 @@ remaining qubits in the entangled state itself.
 \begin{itemize}
 \item Qubit-1 collapses to $\ket{1}$
 \item Probability of this happening is square of its amplitude
-\item Let this amplitude = $\phi$
+\item Let this amplitude = $\frac{1}{2} \phi$
   \begin{mathpar}
-\phi = 
+\frac{1}{2} \phi = 
 \frac{1}{2}
   \left(
     \ket{\psi_1 \psi_2} - \ket{\psi_2 \psi_1}
@@ -217,14 +217,15 @@ remaining qubits in the entangled state itself.
   \end{mathpar}
 \item Required probability is given as:
   \begin{align*}
-\lVert \ket{\phi} \rVert^2
+\left\lVert \frac{1}{2}\ket{\phi} \right\rVert^2
     &=
- |\braket{\phi}{\phi}| \\
+\left( \frac{1}{2} \right)^2 \left\lVert \ket{\phi} \right\rVert^2 \\
     &=
-\frac{1}{2}
+\frac{1}{4} |\braket{\phi}{\phi}| \\
+    &=
+\frac{1}{4}
 (\bra{\psi_1}\bra{\psi_2} - \bra{\psi_2}\bra{\psi_1})
 \cdot
-\frac{1}{2}
 (\ket{\psi_1}\ket{\psi_2} - \ket{\psi_2}\ket{\psi_1}) \\
     &=
 \frac{1}{4}
