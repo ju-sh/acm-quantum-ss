@@ -20,8 +20,8 @@ Consider the following circuit.
 \begin{center}
   \begin{quantikz}
     \lstick{\ket{x}} & \gate[3]{\text{Toffoli}} & \rstick{\ket{x}} \\
-    \lstick{\ket{y}} &                   & \rstick{\ket{y}} \\
-    \lstick{\ket{-}} &                   & 
+    \lstick{\ket{y}} &                          & \rstick{\ket{y}} \\
+    \lstick{\ket{-}} &                          & 
   \end{quantikz}
 \end{center}
 
@@ -36,6 +36,61 @@ T(\ket{11}_{xy} \ket{-}) = a_{11} \ket{11}_{xy} \ket{-} \\
 \end{mathpar}
 
 Write down the values of $a_{00}$, $a_{01}$, $a_{10}$, $a_{11}$.
+
+\begin{solution}
+Toffoli gate is as follows:  
+
+\begin{center}
+  \begin{quantikz}
+    \lstick{$x$} & \gate[3]{\text{Toffoli}} & \rstick{$x$} \\
+    \lstick{$y$} &                          & \rstick{$y$} \\
+    \lstick{$b$} &                          & \rstick{$b \oplus xy$}
+  \end{quantikz}
+\end{center}
+
+It's like a 'CCNOT', a NOT gate with two controls. 3rd output qubit is
+flipped when both other qubits are 1.
+Otherwise input and output are same.
+
+Therefore,
+
+\begin{itemize}
+\item $T(\ket{00}_{xy} \ket{-}) = 1 \cdot \ket{00}_{xy} \ket{-}$
+\item $T(\ket{01}_{xy} \ket{-}) = 1 \cdot \ket{01}_{xy} \ket{-}$
+\item $T(\ket{10}_{xy} \ket{-}) = 1 \cdot \ket{10}_{xy} \ket{-}$
+\end{itemize}
+
+When the NOT gate is active,
+
+\begin{mathpar}
+  \begin{array}{crcl}
+            &  \ket{11}\ket{-}   &=& \ket{11}\frac{1}{\sqrt{2}}(\ket{0} - \ket{1}) \\
+  &&& \\
+\Rightarrow & T(\ket{11}\ket{-}) &=& \ket{11}\frac{1}{\sqrt{2}}(\ket{1} - \ket{0}) \\
+  &&=& -\ket{11}\frac{1}{\sqrt{2}}(\ket{0} - \ket{1}) \\
+  &&=& -\ket{11}\ket{-} \\
+  \end{array}
+\end{mathpar}
+
+So the required values are:
+\begin{tabular}{cc}
+  \toprule
+Name & Value \\
+  \midrule
+$a_{00}$ &  1 \\
+$a_{01}$ &  1 \\
+$a_{10}$ &  1 \\
+$a_{11}$ & -1 \\
+  \bottomrule
+\end{tabular}
+
+\begin{mathpar}
+  T(\ket{xy}\ket{-}) = (-1)^{x \land y} \ket{xy}\ket{-}
+\end{mathpar}
+
+Function value being part of the amplitude $\Rightarrow$ \emph{phased representation}.
+
+\end{solution}
 
 \end{questions}
 \end{document}
