@@ -152,7 +152,7 @@ H\ket{0} \otimes \ket{\psi_1 \psi_2}
 +
 \frac{1}{2}\ket{1}
   \left(
-    \ket{\psi_1 \psi_2} + \ket{\psi_2 \psi_1}
+    \ket{\psi_1 \psi_2} - \ket{\psi_2 \psi_1}
   \right)
   \end{align*}
 \item 5: Measure qubit-1 (the first register) $\Rightarrow$
@@ -187,7 +187,131 @@ register 1.
 (Hint: It is a function of $|\braket{\psi_2}{\psi_1}|$.)
 
 \begin{solution}
+Before measuring qubit-1, the state is:
+
+\begin{mathpar}
+\frac{1}{2}\ket{0}
+  \left(
+    \ket{\psi_1 \psi_2} + \ket{\psi_2 \psi_1}
+  \right)
++
+\frac{1}{2}\ket{1}
+  \left(
+    \ket{\psi_1 \psi_2} - \ket{\psi_2 \psi_1}
+  \right)
+\end{mathpar}
+
+\emph{Partial measurement} needed. Measure specific qubits, while leaving the
+remaining qubits in the entangled state itself.
+
+\begin{itemize}
+\item Qubit-1 collapses to $\ket{1}$
+\item Probability of this happening is square of its amplitude
+\item Let this amplitude = $\phi$
+  \begin{mathpar}
+\phi = 
+\frac{1}{2}
+  \left(
+    \ket{\psi_1 \psi_2} - \ket{\psi_2 \psi_1}
+  \right)
+  \end{mathpar}
+\item Required probability is given as:
+  \begin{align*}
+\lVert \ket{\phi} \rVert^2
+    &=
+ |\braket{\phi}{\phi}| \\
+    &=
+\frac{1}{2}
+(\bra{\psi_1}\bra{\psi_2} - \bra{\psi_2}\bra{\psi_1})
+\cdot
+\frac{1}{2}
+(\ket{\psi_1}\ket{\psi_2} - \ket{\psi_2}\ket{\psi_1}) \\
+    &=
+\frac{1}{4}
+\left(
+  \bra{\psi_1}\braket{\psi_2}{\psi_1}\ket{\psi_2}
+- \bra{\psi_1}\braket{\psi_2}{\psi_2}\ket{\psi_1}
+- \bra{\psi_2}\braket{\psi_1}{\psi_1}\ket{\psi_2}
++ \bra{\psi_2}\braket{\psi_1}{\psi_2}\ket{\psi_1}
+\right) \\
+    &=
+\frac{1}{4}
+\left(
+  \bra{\psi_1}\braket{\psi_2}{\psi_1}\ket{\psi_2}
+- \braket{\psi_1}{\psi_1}
+- \braket{\psi_2}{\psi_2}
++ \bra{\psi_2}\braket{\psi_1}{\psi_2}\ket{\psi_1}
+\right) \\
+    &=
+\frac{1}{4}
+\left(
+\bra{\psi_1}
+\braket{\psi_2}{\psi_1}
+\ket{\psi_2}
+-1 -1
++
+\bra{\psi_2}
+\braket{\psi_1}{\psi_2}
+\ket{\psi_1}
+\right) \\
+    &=
+\frac{1}{4}
+\left(
+\bra{\psi_1}
+\braket{\psi_2}{\psi_1}
+\ket{\psi_2}
+-2
++
+\bra{\psi_2}
+\braket{\psi_1}{\psi_2}
+\ket{\psi_1}
+\right) \\
+  \end{align*}
   
+$\braket{\psi_2}{\psi_1}$ and $\braket{\psi_1}{\psi_2}$ are scalars
+since the operation is inner product.
+So, we can move them out.
+
+\begin{align*}
+  &=
+\frac{1}{4}
+\left(
+\braket{\psi_2}{\psi_1}
+\braket{\psi_1}{\psi_2}
+-2
++
+\braket{\psi_1}{\psi_2}
+\braket{\psi_2}{\psi_1}
+\right) \\
+\end{align*}
+
+% Since $\braket{\psi_1}{\psi_2} = \braket{\psi_2}{\psi_1}$,
+
+% \begin{align*}
+%   &=
+% \frac{1}{4}
+% \left(
+% \braket{\psi_1}{\psi_2}
+% \braket{\psi_1}{\psi_2}
+% -2
+% +
+% \braket{\psi_1}{\psi_2}
+% \braket{\psi_1}{\psi_2}
+% \right) \\
+%   &=
+% \frac{1}{4}
+% \left(
+% \braket{\psi_1}{\psi_2}
+% \braket{\psi_1}{\psi_2}
+% -2
+% +
+% \braket{\psi_1}{\psi_2}
+% \braket{\psi_1}{\psi_2}
+% \right) \\
+% \end{align*}
+
+\end{itemize}
+
 \end{solution}
 
   \question
