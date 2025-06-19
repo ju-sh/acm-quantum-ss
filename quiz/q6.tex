@@ -1,0 +1,85 @@
+\documentclass[12pt]{exam}
+
+\input{../config.tex}
+
+\title{Quiz 6}
+\author{\href{https://github.com/ju-sh/acm-quantum-ss}{{\small ju-sh/acm-quantum-ss}}}
+\date{11 June 2025}
+
+\begin{document}
+
+\maketitle
+\printanswers
+
+Suppose we have two single-qubit quantum registers $A$ and $B$. Alice has register $A$ and
+Bob has register $B$. Suppose initially the two registers are in the state
+
+\begin{mathpar}
+\ket{EPR}_{AB} = \frac{1}{\sqrt{2}}(\ket{00}_{AB} + \ket{11}_{AB})
+\end{mathpar}
+
+Alice has the following single-qubit gates in her lab.
+
+\begin{mathpar}
+  NOT = X = 
+  \begin{bmatrix}
+    0 & 1 \\
+    1 & 0 \\
+  \end{bmatrix}
+  
+  Y = 
+  \begin{bmatrix}
+    0 & -i \\
+    i & 0 \\
+  \end{bmatrix}
+  
+  Z = 
+  \begin{bmatrix}
+    1 &  0 \\
+    0 & -1 \\
+  \end{bmatrix}
+  
+  H = 
+  \begin{bmatrix}
+    1 & 1 \\
+    1 & -1 \\
+  \end{bmatrix}
+  
+\end{mathpar}
+
+\begin{questions}
+\question
+What gate should Alice apply to her register $A$ so that the joint state of $A$
+and $B$ goes from $\ket{EPR}$ to
+
+\begin{mathpar}
+\ket{\phi_1} = \frac{1}{\sqrt{2}}(\ket{01}_{AB} + \ket{10}_{AB})
+\end{mathpar}
+
+\begin{solution}
+  
+\end{solution}
+
+\question
+What gate should Alice apply to her register $A$ so that the state of
+$A$ and $B$ goes from $\ket{EPR}$ to
+
+\begin{mathpar}
+\ket{\phi_2} = \frac{1}{\sqrt{2}}(\ket{01}_{AB} - \ket{10}_{AB})
+\end{mathpar}
+
+\begin{solution}
+  
+\end{solution}
+
+\question
+Suppose the initial state of the registers is \ket{EPR}.
+What would the state become if Alice applies $H$ to her register $A$
+and Bob applies $H$ to her register $B$?
+
+\begin{solution}
+  
+\end{solution}
+
+\end{questions}
+\end{document}
