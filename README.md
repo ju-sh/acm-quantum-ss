@@ -1,4 +1,4 @@
-#+TITLE: Quantum computing notes
+# Quantum computing notes
 
 Notes from the ACM India summer school on
 [Quantum Circuits and Quantum Algorithms](https://acm-qc-summer-school.gitlab.io/)
