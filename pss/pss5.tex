@@ -224,28 +224,30 @@ remaining qubits in the entangled state itself.
 \frac{1}{4} |\braket{\phi}{\phi}| \\
     &=
 \frac{1}{4}
+      \left|
 (\bra{\psi_1}\bra{\psi_2} - \bra{\psi_2}\bra{\psi_1})
 \cdot
-(\ket{\psi_1}\ket{\psi_2} - \ket{\psi_2}\ket{\psi_1}) \\
+(\ket{\psi_1}\ket{\psi_2} - \ket{\psi_2}\ket{\psi_1})
+      \right| \\
     &=
 \frac{1}{4}
-\left(
+\left|
   \bra{\psi_1}\braket{\psi_2}{\psi_1}\ket{\psi_2}
 - \bra{\psi_1}\braket{\psi_2}{\psi_2}\ket{\psi_1}
 - \bra{\psi_2}\braket{\psi_1}{\psi_1}\ket{\psi_2}
 + \bra{\psi_2}\braket{\psi_1}{\psi_2}\ket{\psi_1}
-\right) \\
+\right| \\
     &=
 \frac{1}{4}
-\left(
+\left|
   \bra{\psi_1}\braket{\psi_2}{\psi_1}\ket{\psi_2}
 - \braket{\psi_1}{\psi_1}
 - \braket{\psi_2}{\psi_2}
 + \bra{\psi_2}\braket{\psi_1}{\psi_2}\ket{\psi_1}
-\right) \\
+\right| \\
     &=
 \frac{1}{4}
-\left(
+\left|
 \bra{\psi_1}
 \braket{\psi_2}{\psi_1}
 \ket{\psi_2}
@@ -254,19 +256,20 @@ remaining qubits in the entangled state itself.
 \bra{\psi_2}
 \braket{\psi_1}{\psi_2}
 \ket{\psi_1}
-\right) \\
+\right| \\
     &=
 \frac{1}{4}
-\left(
+\left|
+-2
++
 \bra{\psi_1}
 \braket{\psi_2}{\psi_1}
 \ket{\psi_2}
--2
 +
 \bra{\psi_2}
 \braket{\psi_1}{\psi_2}
 \ket{\psi_1}
-\right) \\
+\right| \\
   \end{align*}
   
 $\braket{\psi_2}{\psi_1}$ and $\braket{\psi_1}{\psi_2}$ are scalars
@@ -276,14 +279,63 @@ So, we can move them out.
 \begin{align*}
   &=
 \frac{1}{4}
-\left(
+\left|
+-2
++
 \braket{\psi_2}{\psi_1}
 \braket{\psi_1}{\psi_2}
--2
 +
 \braket{\psi_1}{\psi_2}
 \braket{\psi_2}{\psi_1}
-\right) \\
+\right| \\
+\end{align*}
+
+Given a $u = \braket{a}{b}$, its complex conjugate is $u^* = \braket{b}{a}$.\\
+Also, $u u^* = |u|^2$.\\
+Hence
+\begin{mathpar}
+\braket{\psi_2}{\psi_1}\braket{\psi_1}{\psi_2} = |\braket{\psi_2}{\psi_1}|^2
+
+\braket{\psi_1}{\psi_2}\braket{\psi_2}{\psi_1} = |\braket{\psi_2}{\psi_1}|^2
+\end{mathpar}
+
+Therefore,
+
+\begin{align*}
+  &=
+\frac{1}{4}
+\left|
+-2
++
+|\braket{\psi_2}{\psi_1}|^2
++
+|\braket{\psi_2}{\psi_1}|^2
+\right| \\
+  &=
+\frac{1}{4}
+\left|
+-2
++
+2|\braket{\psi_2}{\psi_1}|^2
+\right| \\
+  &=
+\frac{1}{2}
+\left|
+-1 + |\braket{\psi_2}{\psi_1}|^2
+\right| \\
+\end{align*}
+
+As we are within an absolute value operation, it doesn't hurt to flip
+the signs.
+
+\begin{align*}
+  &=
+\frac{1}{2}
+\left|
+1 - |\braket{\psi_2}{\psi_1}|^2
+\right| \\
+  &=
+\frac{1}{2} - \frac{1}{2}|\braket{\psi_2}{\psi_1}|^2 \\
 \end{align*}
 
 % Since $\braket{\psi_1}{\psi_2} = \braket{\psi_2}{\psi_1}$,
