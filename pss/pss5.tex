@@ -202,7 +202,8 @@ Before measuring qubit-1, the state is:
 \end{mathpar}
 
 \emph{Partial measurement} needed. Measure specific qubits, while leaving the
-remaining qubits in the entangled state itself.
+remaining qubits in the entangled state itself.\\
+{\footnotesize \url{https://www.cs.sfu.ca/~meamy/Teaching/s24/cmpt476/Lecture07.pdf}}
 
 \begin{itemize}
 \item Qubit-1 collapses to $\ket{1}$
@@ -220,6 +221,15 @@ remaining qubits in the entangled state itself.
 \left\lVert \frac{1}{2}\ket{\phi} \right\rVert^2
     &=
 \left( \frac{1}{2} \right)^2 \left\lVert \ket{\phi} \right\rVert^2 \\
+  \end{align*}
+  
+We know that:
+\begin{itemize}
+\item The length of a vector is its inner product with itself = magnitude
+\item If $\ket{a}$ is a unit vector, its length is $1 = \braket{a}{a}$
+\end{itemize}
+
+  \begin{align*}
     &=
 \frac{1}{4} |\braket{\phi}{\phi}| \\
     &=
@@ -290,9 +300,24 @@ So, we can move them out.
 \right| \\
 \end{align*}
 
-Given a $u = \braket{a}{b}$, its complex conjugate is $u^* = \braket{b}{a}$.\\
-Also, $u u^* = |u|^2$.\\
-Hence
+We know that:
+\begin{itemize}
+\item Given a $u = \braket{a}{b}$, its complex conjugate is $u^* = \braket{b}{a}$
+\item Also, $u u^* = |u|^2$
+\item Because $c \in \mathbb{C} \Rightarrow cc^* = |c|^2$
+\end{itemize}
+
+Also,
+\begin{mathpar}
+\braket{a}{b} = \sum\limits_{i=1}^{n} a_i^* b_i
+
+\braket{b}{a} = \sum\limits_{i=1}^{n} b_i^* a_i \\
+
+\braket{b}{a}^* = \sum\limits_{i=1}^{n} a_i^* b_i = \braket{a}{b}
+\end{mathpar}
+
+So,
+
 \begin{mathpar}
 \braket{\psi_2}{\psi_1}\braket{\psi_1}{\psi_2} = |\braket{\psi_2}{\psi_1}|^2
 
