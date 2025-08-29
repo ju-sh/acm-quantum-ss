@@ -1,0 +1,2 @@
+#+TITLE: Links
+ - NPTEL Introduction to quantum computing: https://nptel.ac.in/courses/106106232
