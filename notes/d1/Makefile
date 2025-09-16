@@ -1,7 +1,5 @@
-build: ../config.tex l1.tex l2.tex l3.tex
+build: ../config.tex l1.tex
 	latexmk -xelatex -shell-escape l1.tex
-	latexmk -xelatex -shell-escape l2.tex
-	latexmk -xelatex -shell-escape l3.tex
 
 watch:
 	latexmk -pvc -xelatex -shell-escape l1.tex

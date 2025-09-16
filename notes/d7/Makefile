@@ -1,10 +1,8 @@
-build: ../config.tex l1.tex l2.tex l3.tex
-	latexmk -xelatex -shell-escape l1.tex
+build: ../config.tex l2.tex
 	latexmk -xelatex -shell-escape l2.tex
-	latexmk -xelatex -shell-escape l3.tex
 
 watch:
-	latexmk -pvc -xelatex -shell-escape l1.tex
+	latexmk -pvc -xelatex -shell-escape l2.tex
 
 clean:
 	rm -f *.lo[a,f,l,t,g] *.bb[l,g] *.blg *.out *.pdf *.nlo *.toc \
